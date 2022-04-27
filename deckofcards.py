@@ -1,5 +1,6 @@
 from random import choice
 
+
 class DeckOfCards:
     """Simulates a deck of playing cards"""
 
@@ -17,19 +18,15 @@ class DeckOfCards:
         card = self.cards.pop(card_idx)
         return card
 
-    def deal_cards(self, num_of_cards_per_player, player_1, player_2):
-        """Deals a predetermined num_of_cards_per_player from deck to 2 players"""
-        for i in range(num_of_cards_per_player):
-            card = self.get_random_card()
-            player_1.cards.append(card)
-            card = self.get_random_card()
-            player_2.cards.append(card)
+    def deal_cards(self, num_of_cards, players):
+        """Distributes predetermined total number of cards to each player"""
+        num_of_players = len(players)
+        cards_per_player = int(num_of_cards/num_of_players)
+        for i in range(cards_per_player):
+            for player in players:
+                card = self.get_random_card()
+                player.cards.append(card)
         return
-
-        # for i in range(num_of_cards):
-
-
-
 
 
 class Player:
@@ -37,6 +34,3 @@ class Player:
 
     def __init__(self):
         self.cards = []
-
-
-

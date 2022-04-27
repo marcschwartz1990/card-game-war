@@ -4,9 +4,9 @@ deck = DeckOfCards()
 p1 = Player()
 p2 = Player()
 
-print(len(deck.cards))
-deck.deal_cards(26, p1, p2)
-print(p1.cards)
-print(p2.cards)
-print(len(deck.cards))
+players = [p1, p2]
+
+deck.deal_cards(52, players)
+print(len(p1.cards))
+print(len(p2.cards))
 
