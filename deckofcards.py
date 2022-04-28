@@ -32,7 +32,6 @@ class DeckOfCards:
             for player in players:
                 card = self.get_random_card()
                 player.cards.append(card)
-        return
 
 
 class Player:
@@ -51,28 +50,7 @@ def play_round(p1_cards, p2_cards):
     # Make function work for variable number of players
 
 
-def evaluate_cards(p1_card, p2_card, deck, p1, p2, board):
-    if deck.card_ranks[str(p1_card[0])] == deck.card_ranks[str(p2_card[0])]:
-        print('war')
-        reserve = []
-        for i in range(2):
-            reserve.append(board.pop(0))
-        for i in range(3):
-            p1_reserve_card = p1.cards.pop(0)
-            p2_reserve_card = p2.cards.pop(0)
-            reserve.append(p1_reserve_card)
-            reserve.append(p2_reserve_card)
-        p1_card = p1.cards.pop(0)
-        p2_card = p2.cards.pop(0)
-        board.append(p1_card)
-        board.append(p2_card)
-    elif deck.card_ranks[str(p1_card[0])] > deck.card_ranks[str(p2_card[0])]:
-        print('player 1 wins!')
-        p1.cards.append(p1_card)
-        p1.cards.append(p2_card)
-    else:
-        print('player 2 wins!')
-        p2.cards.append(p1_card)
-        p2.cards.append(p2_card)
+def evaluate_cards():
+    pass
     #TODO
     # Make function work for variable number of players
